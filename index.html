@@ -1,15 +1,253 @@
-nano index.html<!DOCTYPE html>
-<html>
-<head>
-    <title>Manon DevOps Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Bienvenue sur mon portfolio DevOps</h1>
-    <p>Cycle 1 - Foundations & Discipline</p>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manon — DevOps & Cloud</title>
+    <meta
+      name="description"
+      content="Portfolio DevOps & Cloud — Linux, Git, Docker, CI/CD, Cloud basics."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Top bar -->
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Retour en haut">Manon</a>
+
+      <nav class="nav">
+        <a href="#projects">Projets</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Changer le thème">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main id="top" class="container">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-left">
+          <p class="badge">DevOps • Cloud</p>
+          <h1>Manon</h1>
+          <p class="subtitle">DevOps & Cloud Engineer</p>
+
+          <p class="lead">
+            Je conçois des environnements fiables, automatisés et scalables avec Linux, Docker
+            et les bases du Cloud.
+          </p>
+
+          <div class="hero-meta">
+            <span class="meta-item">📍 Île-de-France, France</span>
+            <a class="meta-item" href="mailto:devopsmanon@gmail.com">📩 devopsmanon@gmail.com</a>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#projects">Voir mes projets</a>
+            <a class="btn" href="#contact">Me contacter</a>
+          </div>
+
+          <div class="links">
+            <a class="chip" href="https://github.com/devopsmanon-cmd" target="_blank" rel="noreferrer">
+              GitHub ↗
+            </a>
+            <!-- Si tu crées LinkedIn, dé-commente -->
+            <!--
+            <a class="chip" href="https://www.linkedin.com/in/TON-PROFIL" target="_blank" rel="noreferrer">
+              LinkedIn ↗
+            </a>
+            -->
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="card highlight">
+            <h2>Focus</h2>
+            <ul class="clean-list">
+              <li>Reproductibilité (setup clair + commandes)</li>
+              <li>Automatisation & simplicité</li>
+              <li>Documentation (README) systématique</li>
+              <li>Sécurité de base (SSH / permissions)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Stack</h2>
+            <p class="muted">
+              Linux • Bash • Git/GitHub • Docker • CI/CD (basics) • Cloud (basics) • VPS/SSH
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="section-head">
+          <h2>Projets</h2>
+          <p class="muted">
+            3 projets = 3 preuves : système, conteneurs, déploiement.
+          </p>
+        </div>
+
+        <div class="grid">
+          <!-- Projet 1 -->
+          <article class="project card">
+            <div class="project-top">
+              <h3>Linux Backup Automation</h3>
+              <span class="tag">Linux • Bash</span>
+            </div>
+            <p>
+              Script Bash d’automatisation de sauvegardes avec logs + options de sécurité,
+              conçu pour être planifié via cron.
+            </p>
+            <ul class="bullets">
+              <li>Gestion d’erreurs + codes de sortie</li>
+              <li>Logs horodatés</li>
+              <li>Exécution cron-ready</li>
+            </ul>
+            <div class="project-actions">
+              <a class="btn small" href="https://github.com/devopsmanon-cmd" target="_blank" rel="noreferrer">
+                Code (GitHub)
+              </a>
+              <a class="btn small ghost" href="#contact">Demander la doc</a>
+            </div>
+          </article>
+
+          <!-- Projet 2 -->
+          <article class="project card">
+            <div class="project-top">
+              <h3>Dockerized Web App</h3>
+              <span class="tag">Docker</span>
+            </div>
+            <p>
+              Application web conteneurisée : build d’image, run local, exposition des ports,
+              et base solide pour CI/CD.
+            </p>
+            <ul class="bullets">
+              <li>Dockerfile propre</li>
+              <li>Build & run reproductibles</li>
+              <li>Isolation environnement</li>
+            </ul>
+            <div class="project-actions">
+              <a class="btn small" href="https://github.com/devopsmanon-cmd" target="_blank" rel="noreferrer">
+                Code (GitHub)
+              </a>
+              <a class="btn small ghost" href="#skills">Voir les skills</a>
+            </div>
+          </article>
+
+          <!-- Projet 3 -->
+          <article class="project card">
+            <div class="project-top">
+              <h3>Secure VPS Deployment</h3>
+              <span class="tag">VPS • SSH</span>
+            </div>
+            <p>
+              Déploiement sur serveur Linux distant : accès SSH sécurisé, structure propre,
+              et bonnes pratiques de base (utilisateurs, permissions, firewall).
+            </p>
+            <ul class="bullets">
+              <li>SSH (clé / durcissement)</li>
+              <li>Gestion utilisateurs & permissions</li>
+              <li>Déploiement et validation</li>
+            </ul>
+            <div class="project-actions">
+              <a class="btn small" href="https://github.com/devopsmanon-cmd" target="_blank" rel="noreferrer">
+                Code (GitHub)
+              </a>
+              <a class="btn small ghost" href="#contact">Me contacter</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p class="muted">Stack claire, lisible et orientée production.</p>
+        </div>
+
+        <div class="skills">
+          <div class="card">
+            <h3>🐧 System</h3>
+            <ul class="clean-list">
+              <li>Linux CLI, permissions, process</li>
+              <li>Bash scripting (basics)</li>
+              <li>Logs & troubleshooting</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🔁 Version Control</h3>
+            <ul class="clean-list">
+              <li>Git (init, add, commit, branch)</li>
+              <li>GitHub (repo, issues, README)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🐳 Containers</h3>
+            <ul class="clean-list">
+              <li>Dockerfile, build/run</li>
+              <li>Images / containers / ports</li>
+              <li>Base pour docker-compose</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>☁️ Cloud basics</h3>
+            <ul class="clean-list">
+              <li>VPS, SSH, sécurité de base</li>
+              <li>Networking basique</li>
+              <li>Notions CI/CD (à renforcer)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="muted">
+            Disponible en Île-de-France. Contact direct par email.
+          </p>
+        </div>
+
+        <div class="contact card">
+          <div class="contact-row">
+            <span class="label">Localisation</span>
+            <span>Île-de-France, France</span>
+          </div>
+          <div class="contact-row">
+            <span class="label">Email</span>
+            <a href="mailto:devopsmanon@gmail.com">devopsmanon@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="label">GitHub</span>
+            <a href="https://github.com/devopsmanon-cmd" target="_blank" rel="noreferrer">
+              github.com/devopsmanon-cmd ↗
+            </a>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:devopsmanon@gmail.com">Envoyer un email</a>
+            <a class="btn" href="#top">Retour en haut</a>
+          </div>
+        </div>
+
+        <p class="footnote">
+          © <span id="year"></span> Manon — Built with HTML/CSS/JS.
+        </p>
+      </section>
+    </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-
-
