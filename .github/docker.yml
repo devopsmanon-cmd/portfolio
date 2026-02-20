@@ -1,0 +1,40 @@
+name: Docker Build & Smoke Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t manon-portfolio:ci .
+
+      - name: Run container
+        run: docker run -d --name test-portfolio -p 8080:8080 manon-portfolio:ci
+
+      - name: Smoke test (HTTP 200)
+        run: |
+          for i in {1..20}; do
+            if curl -fsS http://localhost:8080 >/dev/null; then
+              echo "OK - server is up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "ERROR - server did not start in time"
+          docker logs test-portfolio || true
+          exit 1
+
+      - name: Show response headers
+        run: curl -I http://localhost:8080 | head -n 20
+
+      - name: Cleanup
+        if: always()
+        run: docker rm -f test-portfolio || true
